@@ -1,0 +1,5 @@
+<div class="post-tags tags">
+    {{ range (.GetTerms "tags") }}
+        <span class="tag is-light">{{ .LinkTitle }}</span>
+    {{ end }}
+</div>

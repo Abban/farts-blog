@@ -1,0 +1,10 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="/images/favicon.png">
+
+{{ $style := resources.Get "scss/main.scss" | resources.ToCSS (dict "targetPath" "css/style.css" "outputStyle" "compressed") }}
+
+<link rel="stylesheet" href="{{ $style.Permalink }}" type="text/css" media="all" />
+<title>{{ block "title" . }}{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">

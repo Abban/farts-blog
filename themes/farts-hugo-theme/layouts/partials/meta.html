@@ -1,0 +1,7 @@
+<p class="post-meta">
+    <span>{{ .Date.Format "02/01/2006" }}</span>
+    {{ if (eq .Params.post_type "blog") }}
+        {{ $minutes := math.Round (div (countwords .Content) 220.0) }}
+        <span> &bull; {{ $minutes }} {{ cond (eq $minutes 1) "minute" "minutes" }}</span>
+    {{ end }}
+</p>

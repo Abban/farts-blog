@@ -1,0 +1,67 @@
+.post-excerpt {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 720px;
+    transform: translateX(60px);
+    opacity: 0;
+    animation: showPosts 1s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: calc(0.1s * var(--index));
+
+    &-title {
+        a {
+            color: $black;
+
+            &:hover, &:focus {
+                color: $link;
+            }
+        }
+    }
+
+    &-content {
+        font-size: 18px;
+        margin-bottom: 1em;
+    }
+
+    &.micro-blog {
+        max-width: 520px;
+        font-size: 0.8em;
+
+        .post-excerpt-content {
+            font-size: 16px;
+        }
+    }
+}
+
+.fade-leave-active {
+    .post-excerpt {
+        animation: hidePosts 1s ease-in-out;
+    }
+}
+
+.post-meta {
+    color: $dark-grey;
+    font-style: italic;
+}
+
+@keyframes showPosts {
+    0% {
+        transform: translateX(60px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes hidePosts {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-60px);
+        opacity: 0;
+    }
+}

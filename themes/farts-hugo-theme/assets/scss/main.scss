@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i,800');
+
+@import './fonts';
+@import './variables';
+@import './transitions';
+@import './nprogress';
+@import './code';
+@import "../bulma/sass/base/all";
+@import "../bulma/sass/utilities/all";
+@import "../bulma/sass/grid/all";
+@import "../bulma/sass/elements/container";
+@import "../bulma/sass/elements/content";
+@import "../bulma/sass/elements/tag";
+@import "../bulma/sass/elements/button";
+@import "../bulma/sass/layout/footer";
+
+@import "./components/app-container";
+@import "./components/marquee";
+@import "./components/header";
+@import "./components/logo";
+@import "./components/footer";
+@import "./components/post-excerpt";
+@import "./components/post";
+@import "./components/pagination";
+
+#app {
+    a {
+        transition: color 500ms $easing, background 500ms $easing;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+
+    .tags {
+        justify-content: center;
+    }
+
+    .columns:last-child {
+        margin-bottom: 0;
+    }
+
+    .content {
+        figure,
+        figure:not(:last-child),
+        figure:not(:first-child) {
+            margin: 0 0 1em;
+            text-align: left;
+        }
+
+        figcaption {
+            font-size: 14px;
+        }
+
+        figure pre {
+            margin-bottom: 0;
+        }
+    }
+
+    .buttons, .buttons:last-child {
+        margin-bottom: 60px
+    }
+}

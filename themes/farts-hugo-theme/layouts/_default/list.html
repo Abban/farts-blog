@@ -1,0 +1,49 @@
+{{ define "main" }}
+    {{ $paginator := .Paginate (.Site.RegularPages) }}
+
+    <div class="home container">
+        <div class="post-excerpts">
+            {{ range $index, $page := $paginator.Pages }}
+                <div class="columns is-centered">
+                    <div class="post-excerpt content column {{ .Params.post_type }}" style="--index: {{ $index }}">
+                        <h2 class="post-excerpt-title">
+                            {{ if (eq .Params.post_type "blog") }}
+                                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                            {{ else }}
+                                {{ .Title }}
+                            {{ end }}
+                        </h2>
+
+                        {{ partial "meta.html" . }}
+
+                        <div class="post-excerpt-content">
+                            {{ if (eq .Params.post_type "blog") }}
+                                <p>{{ .Description }}</p>
+                            {{ else }}
+                                {{ .Content }}
+                            {{ end }}
+                        </div>
+
+                        {{ partial "tags.html" . }}
+                    </div>
+                </div>
+            {{ end }}
+        </div>
+
+        {{ if or $paginator.HasPrev $paginator.HasNext }}
+            <nav class="ab-pagination buttons is-centered" role="navigation" aria-label="pagination">
+                {{ if $paginator.HasPrev }}
+                    <a href="{{ $paginator.Prev.URL }}" class="ab-pagination-link button">Previous</a>
+                {{ else }}
+                    <a href="#" class="ab-pagination-link button is-disabled">Previous</a>
+                {{ end }}
+                {{ if $paginator.HasNext }}
+                    <a href="{{ $paginator.Next.URL }}" class="ab-pagination-link button">Next</a>
+                {{ else }}
+                    <a href="#" class="ab-pagination-link button is-disabled">Next</a>
+                {{ end }}
+            </nav>
+        {{ end }}
+    </div>
+
+{{ end }}

@@ -1,0 +1,50 @@
+// COLOURS
+$black: #000;
+$white: #fff;
+$light-grey: #E5E5E5;
+$dark-grey: #999;
+$blue: #0018CC;
+$red: #FF0000;
+$pink: #FF0066;
+$green: #94F20D;
+$yellow: #FFFF00;
+
+$primary: $blue;
+$link: $pink;
+$info: $pink;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+$dark: $black;
+$text: #343434;
+$code-bg: #1C1B19;
+
+$easing: cubic-bezier(0.815, 0.025, 0.260, 0.975);
+
+// GLOBAL
+$radius: 0;
+$tag-radius: 4px;
+
+// CODE
+$pre-background: $code-bg;
+$pre-font-size: 16px;
+$pre: $white;
+$code-background: $code-bg;
+$code: $white;
+
+// FONTS
+$family-ocra: 'Ocra', monospace;
+$family-sans-serif: 'Open Sans', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+// CONTENT
+$content-heading-weight: 800;
+$content-heading-color: $black;
+
+// BUTTONS
+$button-padding-horizontal: 20px;
+$button-padding-vertical: 30px;
+
+// FOOTER
+$footer-background-color: $black;
+$footer-color: $white;
+$footer-padding: 0 24px;

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    {{ partial "head.html" . }}
+    <body id="app">
+        {{ partial "marquee.html" . }}
+        {{ partial "header.html" . }}
+
+        <div class="app-container">
+            {{- block "main" . }}{{- end }}
+        </div>
+
+        {{- partial "footer.html" . -}}
+    </body>
+</html>
