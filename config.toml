@@ -1,0 +1,16 @@
+baseURL = 'https://farts.ie/'
+languageCode = 'en-gb'
+title = 'Abbans Gone and Done a Blog'
+theme = 'farts-hugo-theme'
+
+[Params]
+    mainSections = ["post"]
+    intro = true
+    headline = "My headline"
+    description = "Abbans Gone and Done a Blog"
+    github = "https://github.com/Abban"
+    twitter = "https://twitter.com/blunderjack"
+    email = "yo@farts.ie"
+    opengraph = true
+    shareTwitter = true
+    dateFormat = "Mon, Jan 2, 2006"
