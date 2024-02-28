@@ -6,6 +6,7 @@ description: Working on the Quest System
 post_type: blog
 tags:
   - Professional
+  - GameDev
 ---
 
 This week I refactored my input system, and added the first flows for the quest system

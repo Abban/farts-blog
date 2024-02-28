@@ -6,6 +6,7 @@ description: New project in the works and now I have actual real time to work on
 post_type: blog
 tags:
   - Professional
+  - GameDev
 ---
 
 I now have a dedicated time slot to work on game development. This is the little prototype I'm now working on.

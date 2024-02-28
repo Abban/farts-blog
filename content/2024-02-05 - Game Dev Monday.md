@@ -6,6 +6,7 @@ description: Here's some progress over the last couple of Mondays
 post_type: blog
 tags:
   - Professional
+  - GameDev
 ---
 
 So over the last few weeks I've finished the first pass on the UFO effects, and started designing and implementing the dialogue/narration system using Yarn Spinner.
