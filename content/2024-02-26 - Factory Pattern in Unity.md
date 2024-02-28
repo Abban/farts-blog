@@ -5,7 +5,6 @@ draft: false
 description: First post documenting how I do project architecture in Unity
 post_type: blog
 tags:
-  - Professional
   - GameDev
 ---
 
@@ -59,7 +58,7 @@ Ideally all these classes should implement an interface, but for clarity I've le
 
 The `*Behaviour` classes are Unity MonoBehaviours that act as the entry point (or a facade) to the modules. Modules interact with each other through these.
 
-Each module has a main controller class, (eg `GameController`) and various sub-controllers. I like the make the main controller implement the same interface as the Behaviour/Facade.
+Each module has a main controller class, (eg `GameController`) and various sub-controllers. I like to make the main controller implement the same interface as the Behaviour/Facade and pass everything through to it.
 
 This is an example of what that code would look like:
 
@@ -68,14 +67,15 @@ This is an example of what that code would look like:
 ```cs
 public class GameController : MonoBehaviour, IGameController
 {
-	[SerializeField] private float autoSaveInterval;
+	[SerializeField] private float autosaveInterval;
+	[SerializeField] private LoadingScreen loadingScreen;
 	
 	private GameFactory _factory;
 	private GameController _controller;
 
 	private void Start()
 	{
-		_factory = new GameFactory(autoSaveInterval);
+		_factory = new GameFactory(autosaveInterval, loadingScreen);
 		_controller = _factory.Controller;
 	}
 
@@ -89,11 +89,15 @@ public class GameController : MonoBehaviour, IGameController
 ```cs
 public class GameFactory
 {
-	private float _autoSaveInterval;
+	private float _autosaveInterval;
+	private ILoadingScreen _loadingScreen;
 	
-	public GameFactory(float autoSaveInterval)
-	{
+	public GameFactory(
+		float autosaveInterval,
+		ILoadingScreen loadingScreen
+	) {
 		_autosaveInterval = autosaveInterval;
+		_loadingScreen = loadingScreen;
 	}
 
 	private GameController _controller;
@@ -105,7 +109,8 @@ public class GameFactory
 
 	private SceneController _sceneController;
 	private SceneController => _sceneController ??= new SceneController(
-		GameState
+		GameState,
+		_loadingScreen
 	);
 
 	private SaveController _saveController;
@@ -121,18 +126,18 @@ public class GameFactory
 `GameController.cs`
 {.code-caption}
 ```cs
-public class GameController : IGameConroller
+public class GameController : IGameController
 {
 	private ISceneController _sceneController;
 	private ISaveController _saveController;
-	private float _autoSaveInterval;
+	private float _autosaveInterval;
 
 	private float _nextSaveTime;
 
 	public GameController(
 		ISceneController sceneController,
 		ISaveController saveController,
-		float autoSaveInterval
+		float autosaveInterval
 	) {
 		_sceneController = sceneController;
 		_saveController = saveController;
@@ -263,7 +268,7 @@ public class GameController
 ```
 
 This also allows easy testing, because you can create a substitute for your `GameStateFactory` and check which states were asked for.
-### 4. Instantiating GameObjects
+### 4. Instantiating Game Objects
 
 You can also push Game Object instantiation into your factories and let them do all the required hookups and initialisations.
 
@@ -290,4 +295,4 @@ Now my code doesn't need to worry about if the player exists in the scene, it'll
 
 That's about it, if you want to ask me any questions you can reach me on [Mastodon](https://mastodon.ie/@abban).
 
-I haven't covered how I like to use core Unity components inside my code, I might write that up next (Hint: Interface everything).
+I haven't covered how I pass in and use core Unity components inside my code, I might write that up next (Hint: Interface everything).

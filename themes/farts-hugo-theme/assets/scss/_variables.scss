@@ -4,6 +4,7 @@ $white: #fff;
 $light-grey: #E5E5E5;
 $dark-grey: #999;
 $blue: #0018CC;
+$light-blue: #8c96de;
 $red: #FF0000;
 $pink: #FF0066;
 $green: #94F20D;
@@ -17,7 +18,8 @@ $warning: $yellow;
 $danger: $red;
 $dark: $black;
 $text: #343434;
-$code-bg: #272822;
+$code-bg: #282828;
+$code-color: #ebdbb2;
 
 $easing: cubic-bezier(0.815, 0.025, 0.260, 0.975);
 
@@ -28,9 +30,9 @@ $tag-radius: 4px;
 // CODE
 $pre-background: $code-bg;
 $pre-font-size: 16px;
-$pre: $white;
+$pre: $code-color;
 $code-background: $code-bg;
-$code: $white;
+$code: $code-color;
 
 // FONTS
 $family-ocra: 'Ocra', monospace;

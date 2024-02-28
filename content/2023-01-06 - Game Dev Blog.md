@@ -5,7 +5,6 @@ draft: false
 description: Still poking at this, I will eventually have a vertical slice ready.
 post_type: blog
 tags:
-  - Professional
   - GameDev
 ---
 

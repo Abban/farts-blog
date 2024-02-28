@@ -5,7 +5,6 @@ draft: false
 description: New project in the works and now I have actual real time to work on it!
 post_type: blog
 tags:
-  - Professional
   - GameDev
 ---
 

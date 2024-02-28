@@ -5,7 +5,6 @@ draft: false
 description: Working on the Quest System
 post_type: blog
 tags:
-  - Professional
   - GameDev
 ---
 

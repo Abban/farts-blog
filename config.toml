@@ -16,6 +16,9 @@ theme = 'farts-hugo-theme'
     dateFormat = "Mon, Jan 2, 2006"
 
 [markup]
+    [markup.highlight]
+        style = 'gruvbox'
+        noClasses = false
     [markup.goldmark]
         [markup.goldmark.renderer]
             unsafe = true

@@ -5,7 +5,6 @@ draft: false
 description: Working on UI
 post_type: blog
 tags:
-  - Professional
   - GameDev
 ---
 

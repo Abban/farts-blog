@@ -5,7 +5,6 @@ draft: false
 description: Here's some progress over the last couple of Mondays
 post_type: blog
 tags:
-  - Professional
   - GameDev
 ---
 

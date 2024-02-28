@@ -5,7 +5,6 @@ draft: true
 description: How I use Unity objects in my own domain
 post_type: blog
 tags:
-  - Professional
   - GameDev
 ---
 
