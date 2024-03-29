@@ -2,7 +2,7 @@
 title: How I Do Factories In Unity
 date: 2024-02-26T00:00:00
 draft: false
-description: First post documenting how I do project architecture in Unity
+description: First post documenting how I do project architecture in Unity.
 post_type: blog
 tags:
   - GameDev
