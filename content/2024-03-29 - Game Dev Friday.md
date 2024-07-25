@@ -1,5 +1,5 @@
 ---
-title: Game Dev Monday 29th Mar 2024
+title: Game Dev Friday 29th Mar 2024
 date: 2024-03-29T00:00:00
 draft: false
 description: Building Some World
