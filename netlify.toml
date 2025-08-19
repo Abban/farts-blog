@@ -3,3 +3,9 @@ HUGO_VERSION = "0.92.2"
 
 [context.deploy-preview.environment]
 HUGO_VERSION = "0.92.2"
+
+[[redirects]]
+    from = "/*"
+    to = "https://abandon.ie"
+    status = 301
+    force = true
